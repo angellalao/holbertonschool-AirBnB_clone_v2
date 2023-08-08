@@ -39,7 +39,7 @@ class BaseModel:
                     setattr(self, key, value)
 
             if 'id' not in kwargs:
-                setattr(self, 'id', str(uuid.uudi4()))
+                setattr(self, 'id', str(uuid.uuid4()))
             if 'created_at' not in kwargs:
                 setattr(self, 'created_at', datetime.now())
             if 'update_at' not in kwargs:
@@ -51,7 +51,7 @@ class BaseModel:
         return '[{}] ({}) {}'.format(cls, self.id, self.__dict__)
 
     def save(self):
-        """Updates updated_at with current time when instance is changed""" 
+        """Updates updated_at with current time when instance is changed"""
         from models import storage
         self.updated_at = datetime.now()
         storage.new(self)
