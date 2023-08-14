@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/", strict_slashes=False)
 def hello_hbnb():
-    """define route """
+    """returns message to be displayed in users browser"""
     return "Hello HBNB!"
 
 if __name__ == "__main__":
