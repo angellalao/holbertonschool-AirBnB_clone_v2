@@ -22,7 +22,7 @@ class State(BaseModel, Base):
             temp_list = []
             for key, val in cities_dict.items():
                 if self.id == val.state_id:
-                    temp_list[key] = val
+                    temp_list.append(val)
             return temp_list
     else:
         cities = relationship(
