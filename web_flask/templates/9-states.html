@@ -15,7 +15,7 @@
 	{% else %}
 	{% for state in states.values() %}
 	{% if id == state.id %}
-	<H1>State:</H1>
+	<H1>State: {{ state.name }}</H1>
 	<H3>Cities:</H3>
         <UL>
             <LI>{{ state.id }}: <B>{{ state.name }}</B>
