@@ -9,7 +9,7 @@
             {% for state in states.values()|sort(attribute='name', case_sensitive=False) %}
             <LI>{{ state.id }}: <B>{{ state.name }}</B>
                 <UL>
-                    {% for city in cities.values() %}
+                    {% for city in cities.values()|sort(attribute='name', case_sensitive=False) %}
                     {% if state.id == city.state_id %}
                     <LI>{{ city.id }}: <B>{{ city.name }}</B></LI>
                     {% endif %}
