@@ -18,15 +18,11 @@
 	<H1>State: {{ state.name }}</H1>
 	<H3>Cities:</H3>
         <UL>
-            <LI>{{ state.id }}: <B>{{ state.name }}</B>
-                <UL>
-                    {% for city in cities.values()|sort(attribute='name', case_sensitive=False) %}
-                    {% if state.id == city.state_id %}
-                    <LI>{{ city.id }}: <B>{{ city.name }}</B></LI>
-                    {% endif %}
-                    {% endfor %}
-                </UL>
-            </LI>
+            {% for city in cities.values()|sort(attribute='name', case_sensitive=False) %}
+            {% if state.id == city.state_id %}
+            <LI>{{ city.id }}: <B>{{ city.name }}</B></LI>
+            {% endif %}
+            {% endfor %}
         </UL>
 	{% endif %}
 	{% endfor %}
