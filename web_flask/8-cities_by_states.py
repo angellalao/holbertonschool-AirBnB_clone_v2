@@ -12,17 +12,8 @@ app = Flask(__name__)
 def states_list():
     """returns list of state objects present in db storage"""
     states = storage.all(State)
-    print(states)
-    print({type(states)})
-    for v in states.values():
-        print(v)
-        print({type(v)})
     cities = storage.all(City)
-    print(cities)
-    for v in cities.values():
-        print(v)
-        print({type(v)})
-    return render_template("8-cities_by_states.html", states=states, \
+    return render_template("8-cities_by_states.html", states=states,
                            cities=cities)
 
 
